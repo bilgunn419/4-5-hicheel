@@ -1,54 +1,197 @@
-import React from "react";
+// components/Portfolio.jsx
+import React, { useState, useEffect } from 'react';
+import Header from './Header1.jsx';
+import Footer from './Footer1.jsx';
+import Home from './HomePage.jsx';
+import Projects from './Projects.jsx';
+import Resume from './Resume.jsx';
+import Contact from './Contact.jsx';
+import './Portfolio.css';
 
-export default function Portfolio() {
+const Portfolio = () => {
+  const [currentPage, setCurrentPage] = useState('home');
+  const [isLoading, setIsLoading] = useState(false);
+
+  // Хуудас шилжих анимаци
+  const changePage = (pageName) => {
+    if (currentPage === pageName) return;
+    
+    setIsLoading(true);
+    
+    // Хуудас солих анимаци
+    setTimeout(() => {
+      setCurrentPage(pageName);
+      setIsLoading(false);
+      
+      // Дээш гүйлгэх
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 300);
+  };
+
+  // Хуудсыг харуулах
+  const renderPage = () => {
+    switch(currentPage) {
+      case 'home':
+        return <Home />;
+      case 'projects':
+        return <Projects />;
+      case 'resume':
+        return <Resume />;
+      case 'contact':
+        return <Contact />;
+      default:
+        return <Home />;
+    }
+  };
+
+  // Keyboard shortcut
+  useEffect(() => {
+    const handleKeyPress = (e) => {
+      // Alt + Number shortcuts
+      if (e.altKey) {
+        switch(e.key) {
+          case '1':
+            changePage('home');
+            break;
+          case '2':
+            changePage('projects');
+            break;
+          case '3':
+            changePage('resume');
+            break;
+          case '4':
+            changePage('contact');
+            break;
+        }
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyPress);
+    return () => window.removeEventListener('keydown', handleKeyPress);
+  }, [currentPage]);
+
   return (
-    <section
-      id="home"
-      className="bg-gradient-to-b from-gray-100 to-gray-200 py-20 px-6 md:px-12"
-    >
-      <div className="max-w-7xl mx-auto bg-white rounded-3xl p-8 md:p-16 flex flex-col md:flex-row items-center shadow-lg">
-        <div className="flex-shrink-0 w-full md:w-1/3 mb-10 md:mb-0">
-          <img
-            src="https://randomuser.me/api/portraits/men/75.jpg"
-            alt="Brooklyn Gilbert"
-            className="rounded-3xl object-cover w-full h-auto"
-          />
+    <div className="portfolio-app">
+      {/* Loading Animation */}
+      {isLoading && (
+        <div className="page-transition">
+          <div className="loading-spinner"></div>
+          <p>Хуудас шилжиж байна...</p>
+        </div>
+      )}
+
+      {/* Header with Navigation */}
+      <div className="portfolio-header-wrapper">
+        <Header currentPage={currentPage} onChangePage={changePage} />
+      </div>
+
+      {/* Main Content */}
+      <main className="portfolio-main">
+        <div className={`page-container ${isLoading ? 'fading' : ''}`}>
+          {renderPage()}
+        </div>
+      </main>
+
+      {/* Page Navigation Sidebar */}
+      <div className="page-sidebar">
+        <div className="sidebar-nav">
+          <button 
+            className={`sidebar-btn ${currentPage === 'home' ? 'active' : ''}`}
+            onClick={() => changePage('home')}
+            title="Alt + 1"
+          >
+            <span className="sidebar-icon">🏠</span>
+            <span className="sidebar-text">Home</span>
+          </button>
+          
+          <button 
+            className={`sidebar-btn ${currentPage === 'projects' ? 'active' : ''}`}
+            onClick={() => changePage('projects')}
+            title="Alt + 2"
+          >
+            <span className="sidebar-icon">💻</span>
+            <span className="sidebar-text">Projects</span>
+          </button>
+          
+          <button 
+            className={`sidebar-btn ${currentPage === 'resume' ? 'active' : ''}`}
+            onClick={() => changePage('resume')}
+            title="Alt + 3"
+          >
+            <span className="sidebar-icon">📄</span>
+            <span className="sidebar-text">Resume</span>
+          </button>
+          
+          <button 
+            className={`sidebar-btn ${currentPage === 'contact' ? 'active' : ''}`}
+            onClick={() => changePage('contact')}
+            title="Alt + 4"
+          >
+            <span className="sidebar-icon">📞</span>
+            <span className="sidebar-text">Contact</span>
+          </button>
         </div>
 
-        <div className="md:ml-16 flex-1">
-          <h1 className="text-5xl font-extrabold mb-4 text-gray-900">
-            Hello, I’m <br />
-            Brooklyn Gilbert
-          </h1>
-          <p className="text-gray-600 max-w-xl mb-8">
-            I'm a Freelance{" "}
-            <span className="text-pink-500 font-semibold">UI/UX Designer</span>{" "}
-            and <span className="text-pink-500 font-semibold">Developer</span>{" "}
-            based in London, England. I strive to build immersive and beautiful
-            web applications through carefully crafted code and user-centric
-            design.
-          </p>
-
-          <button className="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-6 py-3 rounded-lg transition">
-            Say Hello!
-          </button>
-
-          <div className="mt-12 flex space-x-8 max-w-md">
-            <div className="bg-gray-100 rounded-lg p-6 text-center shadow">
-              <p className="text-3xl font-bold">15 Y.</p>
-              <p className="text-gray-500">Experience</p>
-            </div>
-            <div className="bg-gray-100 rounded-lg p-6 text-center shadow">
-              <p className="text-3xl font-bold">250+</p>
-              <p className="text-gray-500">Projects</p>
-            </div>
-            <div className="bg-gray-100 rounded-lg p-6 text-center shadow">
-              <p className="text-3xl font-bold">58</p>
-              <p className="text-gray-500">Clients</p>
-            </div>
+        <div className="page-indicator">
+          <div className="indicator-dots">
+            <span className={`dot ${currentPage === 'home' ? 'active' : ''}`}></span>
+            <span className={`dot ${currentPage === 'projects' ? 'active' : ''}`}></span>
+            <span className={`dot ${currentPage === 'resume' ? 'active' : ''}`}></span>
+            <span className={`dot ${currentPage === 'contact' ? 'active' : ''}`}></span>
           </div>
+          <p className="current-page-label">
+            {currentPage === 'home' && 'Нүүр хуудас'}
+            {currentPage === 'projects' && 'Төслүүд'}
+            {currentPage === 'resume' && 'Резюме'}
+            {currentPage === 'contact' && 'Холбоо барих'}
+          </p>
         </div>
       </div>
-    </section>
+
+      {/* Page Navigation Bottom Bar (Mobile) */}
+      <div className="mobile-navbar">
+        <button 
+          className={`mobile-nav-btn ${currentPage === 'home' ? 'active' : ''}`}
+          onClick={() => changePage('home')}
+        >
+          <span className="mobile-nav-icon">🏠</span>
+          <span className="mobile-nav-label">Home</span>
+        </button>
+        
+        <button 
+          className={`mobile-nav-btn ${currentPage === 'projects' ? 'active' : ''}`}
+          onClick={() => changePage('projects')}
+        >
+          <span className="mobile-nav-icon">💻</span>
+          <span className="mobile-nav-label">Projects</span>
+        </button>
+        
+        <button 
+          className={`mobile-nav-btn ${currentPage === 'resume' ? 'active' : ''}`}
+          onClick={() => changePage('resume')}
+        >
+          <span className="mobile-nav-icon">📄</span>
+          <span className="mobile-nav-label">Resume</span>
+        </button>
+        
+        <button 
+          className={`mobile-nav-btn ${currentPage === 'contact' ? 'active' : ''}`}
+          onClick={() => changePage('contact')}
+        >
+          <span className="mobile-nav-icon">📞</span>
+          <span className="mobile-nav-label">Contact</span>
+        </button>
+      </div>
+
+      {/* Footer */}
+      <div className="portfolio-footer-wrapper">
+        <Footer currentPage={currentPage} />
+      </div>
+
+      Quick Navigation Modal
+     
+    </div>
   );
-}
+};
+
+export default Portfolio;

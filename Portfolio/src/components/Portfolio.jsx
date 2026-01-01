@@ -1,256 +1,106 @@
 import React from 'react';
+import project1 from "../assets/project1.jpg";
 
-import Project1 from "./assets/project1.jpg";
+  const Portfolio = () => {
+  const hobbies = [
+    { name: 'Photography', icon: '📷', description: 'Capturing moments and landscapes in nature and urban settings' },
+    { name: 'Hiking', icon: '🥾', description: 'Exploring mountains and nature trails on weekends' },
+    { name: 'Reading', icon: '📚', description: 'Tech books, design journals, and philosophical literature' },
+    { name: 'Cooking', icon: '🍳', description: 'Experimenting with international cuisines and fusion recipes' },
+  ];
 
-const Portfolio = () => {
-  const _project = [
-    { id: 1, title: 'E-commerce Dashboard', category: 'UI/UX Design', image: Project1 },
-    
+  const achievements = [
+    { title: 'Design Excellence Award 2023', description: 'Best UI Design - International Design Forum', year: '2023' },
+    { title: 'Client Satisfaction Award', description: '98% Positive Feedback from 250+ Projects', year: '2022' },
+    { title: 'Innovation in Tech Award', description: 'Most Innovative Mobile App Design', year: '2021' },
   ];
 
   const skills = [
     { name: 'UI/UX Design', level: 95 },
     { name: 'Frontend Development', level: 90 },
-    { name: 'Mobile Design', level: 85 },
-    { name: 'Brand Identity', level: 80 },
+    { name: 'Mobile Design', level: 88 },
+    { name: 'Brand Identity', level: 85 },
+    { name: 'Prototyping', level: 92 },
+    { name: 'User Research', level: 87 },
   ];
 
-  const hobbies = [
-    { name: 'Photography', icon: '📷' },
-    { name: 'Hiking', icon: '🥾' },
-    { name: 'Reading', icon: '📚' },
-    { name: 'Cooking', icon: '🍳' },
+  const projects = [
+    { title: 'E-commerce Platform', category: 'Web Design', description: 'Full redesign for fashion retailer' },
+    { title: 'Fitness Mobile App', category: 'Mobile App', description: 'Workout tracking and nutrition planning' },
+    { title: 'Corporate Website', category: 'Web Development', description: 'Corporate identity and CMS integration' },
   ];
 
-  const achievements = [
-    { title: 'Design Award 2023', description: 'Best UI Design' },
-    { title: 'Client Satisfaction', description: '98% Positive Feedback' },
-    { title: 'Projects Completed', description: '250+ Successful Projects' },
+  const socialLinks = [
+    { name: 'Facebook', icon: '📘', url: 'https://facebook.com', color: 'bg-blue-600' },
+    { name: 'Instagram', icon: '📷', url: 'https://instagram.com', color: 'bg-gradient-to-r from-purple-600 to-pink-600' },
+    { name: 'LinkedIn', icon: '💼', url: 'https://linkedin.com', color: 'bg-blue-500' },
+    { name: 'Twitter', icon: '🐦', url: 'https://twitter.com', color: 'bg-sky-500' },
+    { name: 'Dribbble', icon: '🏀', url: 'https://dribbble.com', color: 'bg-pink-500' },
+    { name: 'GitHub', icon: '💻', url: 'https://github.com', color: 'bg-gray-800' },
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50">
-      {/* Main Header */}
-      <header className="bg-white shadow-sm">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50 font-sans">
+      
+      <header className="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md z-50 shadow-sm">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-xl">B</span>
+            {/* Logo/Brand */}
+            <div className="flex items-center space-x-3 mb-4 md:mb-0">
+              <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center">
+                <span className="text-white font-bold text-lg">B</span>
               </div>
               <div>
-                <h1 className="text-2xl font-bold text-gray-800">Brooklyn Gilbert</h1>
-                <p className="text-gray-600">UI/UX Designer & Developer</p>
+                <h1 className="text-xl font-bold text-gray-800">Brooklyn Gilbert</h1>
+                <p className="text-gray-600 text-sm">UI/UX Designer & Developer</p>
               </div>
             </div>
             
-            <nav className="mt-4 md:mt-0 flex flex-wrap justify-center gap-6 md:gap-8">
-              <a href="#about" className="text-gray-700 hover:text-blue-600 font-medium transition duration-300 group">
-                <div className="flex items-center gap-2">
-                  <span className="text-lg">👤</span>
-                  <span>About Me</span>
-                  <span className="w-0 group-hover:w-4 h-0.5 bg-blue-600 transition-all duration-300"></span>
-                </div>
+          
+            <nav className="flex flex-wrap justify-center gap-4 md:gap-6">
+              <a 
+                href="#about" 
+                className="px-4 py-2 text-gray-700 hover:text-blue-600 font-medium transition duration-300 rounded-lg hover:bg-blue-50"
+              >
+                About Me
               </a>
-              <a href="#hobby" className="text-gray-700 hover:text-blue-600 font-medium transition duration-300 group">
-                <div className="flex items-center gap-2">
-                  <span className="text-lg">🎨</span>
-                  <span>Hobby</span>
-                  <span className="w-0 group-hover:w-4 h-0.5 bg-blue-600 transition-all duration-300"></span>
-                </div>
+              <a 
+                href="#hobby" 
+                className="px-4 py-2 text-gray-700 hover:text-blue-600 font-medium transition duration-300 rounded-lg hover:bg-blue-50"
+              >
+                Hobby
               </a>
-              <a href="#achievements" className="text-gray-700 hover:text-blue-600 font-medium transition duration-300 group">
-                <div className="flex items-center gap-2">
-                  <span className="text-lg">🏆</span>
-                  <span>Achievements</span>
-                  <span className="w-0 group-hover:w-4 h-0.5 bg-blue-600 transition-all duration-300"></span>
-                </div>
+              <a 
+                href="#achievements" 
+                className="px-4 py-2 text-gray-700 hover:text-blue-600 font-medium transition duration-300 rounded-lg hover:bg-blue-50"
+              >
+                Achievements
+              </a>
+              <a 
+              
+                href="#contact" 
+                className="px-4 py-2 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition duration-300"
+              >
+                Contact
               </a>
             </nav>
           </div>
         </div>
       </header>
 
-      {/* Main Content Area */}
-      <div className="p-6 md:p-12 lg:p-16">
-        {/* About Me Section */}
-        <section id="about" className="max-w-7xl mx-auto mb-20">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-10 flex items-center gap-3">
-            <div className="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center">
-              <span className="text-blue-600 text-xl">👤</span>
-            </div>
-            About Me
-          </h2>
+     
+      <main className="pt-24">
+       
+        <section className="max-w-7xl mx-auto px-6 py-12 md:py-20">
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div>
-              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl shadow-lg mb-8">
-                <h3 className="text-2xl font-bold text-gray-800 mb-6">Personal Background</h3>
-                <p className="text-gray-600 text-lg leading-relaxed mb-4">
-                  Based in London with over 15 years of experience in UI/UX design and development. 
-                  I specialize in creating digital experiences that are both beautiful and functional.
-                </p>
-                <p className="text-gray-600 leading-relaxed">
-                  My journey started in graphic design and evolved into frontend development, 
-                  giving me a unique perspective on both design and implementation.
-                </p>
-              </div>
-              
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-white p-6 rounded-xl shadow-md">
-                  <div className="text-3xl text-blue-600 mb-2">📍</div>
-                  <h4 className="font-bold text-gray-800 mb-1">Location</h4>
-                  <p className="text-gray-600">London, England</p>
-                </div>
-                <div className="bg-white p-6 rounded-xl shadow-md">
-                  <div className="text-3xl text-blue-600 mb-2">🎓</div>
-                  <h4 className="font-bold text-gray-800 mb-1">Education</h4>
-                  <p className="text-gray-600">MSc. Computer Science</p>
-                </div>
-              </div>
-            </div>
-            
-            <div className="relative">
-              <div className="bg-gradient-to-br from-blue-600 to-indigo-600 h-64 rounded-2xl shadow-xl mb-8 flex items-center justify-center">
-                <div className="text-center text-white p-8">
-                  <div className="text-5xl mb-4">🌟</div>
-                  <h3 className="text-2xl font-bold mb-2">Design Philosophy</h3>
-                  <p className="text-blue-100">"Simplicity is the ultimate sophistication"</p>
-                </div>
-              </div>
-              
-              <div className="bg-white p-6 rounded-2xl shadow-lg">
-                <h4 className="text-xl font-bold text-gray-800 mb-4">Skills Progress</h4>
-                {skills.map((skill, index) => (
-                  <div key={index} className="mb-4">
-                    <div className="flex justify-between mb-1">
-                      <span className="text-gray-700">{skill.name}</span>
-                      <span className="text-blue-600 font-bold">{skill.level}%</span>
-                    </div>
-                    <div className="w-full bg-gray-200 rounded-full h-2">
-                      <div 
-                        className="bg-gradient-to-r from-blue-500 to-indigo-500 h-2 rounded-full transition-all duration-1000 ease-out"
-                        style={{ width: `${skill.level}%` }}
-                      ></div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Hobby Section */}
-        <section id="hobby" className="max-w-7xl mx-auto mb-20">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-10 flex items-center gap-3">
-            <div className="w-10 h-10 bg-green-100 rounded-xl flex items-center justify-center">
-              <span className="text-green-600 text-xl">🎨</span>
-            </div>
-            My Hobbies & Interests
-          </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {hobbies.map((hobby, index) => (
-              <div key={index} className="group">
-                <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 h-full">
-                  <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                    {hobby.icon}
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">{hobby.name}</h3>
-                  <p className="text-gray-600">
-                    {hobby.name === 'Photography' && 'Capturing moments and landscapes'}
-                    {hobby.name === 'Hiking' && 'Exploring nature and mountains'}
-                    {hobby.name === 'Reading' && 'Tech books and design journals'}
-                    {hobby.name === 'Cooking' && 'Experimenting with international cuisines'}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-          
-          <div className="mt-12 bg-gradient-to-r from-green-50 to-blue-50 p-8 rounded-2xl">
-            <h3 className="text-2xl font-bold text-gray-800 mb-4">Weekend Activities</h3>
-            <div className="flex flex-wrap gap-4">
-              <span className="bg-white px-4 py-2 rounded-full text-gray-700 shadow-sm">Photography Walks</span>
-              <span className="bg-white px-4 py-2 rounded-full text-gray-700 shadow-sm">Cooking Workshops</span>
-              <span className="bg-white px-4 py-2 rounded-full text-gray-700 shadow-sm">Design Meetups</span>
-              <span className="bg-white px-4 py-2 rounded-full text-gray-700 shadow-sm">Nature Hikes</span>
-            </div>
-          </div>
-        </section>
-
-        {/* Achievements Section */}
-        <section id="achievements" className="max-w-7xl mx-auto mb-20">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-10 flex items-center gap-3">
-            <div className="w-10 h-10 bg-yellow-100 rounded-xl flex items-center justify-center">
-              <span className="text-yellow-600 text-xl">🏆</span>
-            </div>
-            Achievements & Awards
-          </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {achievements.map((achievement, index) => (
-              <div key={index} className="relative group">
-                <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border-l-4 border-yellow-500 h-full">
-                  <div className="absolute -top-4 -left-4 w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center text-white font-bold text-xl">
-                    {index + 1}
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-800 mb-3 mt-4">{achievement.title}</h3>
-                  <p className="text-gray-600 mb-4">{achievement.description}</p>
-                  <div className="text-yellow-500 text-sm font-medium">
-                    ⭐⭐⭐⭐⭐
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-          
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white p-8 rounded-2xl shadow-xl">
-              <h3 className="text-2xl font-bold mb-4">Certifications</h3>
-              <ul className="space-y-3">
-                <li className="flex items-center gap-3">✅ Google UX Design Professional</li>
-                <li className="flex items-center gap-3">✅ Adobe Certified Expert</li>
-                <li className="flex items-center gap-3">✅ AWS Certified Developer</li>
-                <li className="flex items-center gap-3">✅ Scrum Master Certified</li>
-              </ul>
-            </div>
-            <div className="bg-white p-8 rounded-2xl shadow-lg">
-              <h3 className="text-2xl font-bold text-gray-800 mb-4">Recognition</h3>
-              <div className="space-y-4">
-                <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center">
-                    <span className="text-blue-600 text-2xl">🏅</span>
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-gray-800">Featured in Tech Magazine</h4>
-                    <p className="text-gray-600 text-sm">2023 Edition - Top 50 Designers</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center">
-                    <span className="text-green-600 text-2xl">📈</span>
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-gray-800">Industry Speaker</h4>
-                    <p className="text-gray-600 text-sm">Keynote at Design Conference 2023</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Original Content */}
-        <section className="max-w-7xl mx-auto">
-          <div className="mb-6">
-            <span className="inline-block bg-gradient-to-r from-blue-100 to-indigo-100 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold tracking-wide shadow-sm">
-              FREEBIES
-            </span>
-          </div>
-          
-          <div className="flex flex-col lg:flex-row items-start lg:items-center gap-12 lg:gap-20">
             <div className="lg:w-1/2">
+              <div className="mb-6">
+                <span className="inline-block bg-gradient-to-r from-blue-100 to-indigo-100 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold tracking-wide shadow-sm">
+                  AVAILABLE FOR FREELANCE
+                </span>
+              </div>
+              
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
                 Hello, I'm
                 <br />
@@ -265,70 +115,398 @@ const Portfolio = () => {
                 carefully crafted code and user-centric design.
               </p>
               
-              <button className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold px-10 py-4 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl shadow-lg">
-                Say Hello!
-              </button>
+              <div className="flex flex-wrap gap-4">
+                <button className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl shadow-lg">
+                  Say Hello! 👋
+                </button>
+                <button className="border-2 border-gray-300 hover:border-blue-600 text-gray-700 hover:text-blue-600 font-semibold px-8 py-4 rounded-xl transition-all duration-300">
+                  View Portfolio
+                </button>
+              </div>
             </div>
             
-            <div className="lg:w-1/2 grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8">
-              <div className="text-center p-6 md:p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-3">
-                  15 Y.
+            
+            <div className="lg:w-1/2">
+              <div className="relative">
+                
+                <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 mx-auto">
+                  <div className="absolute -inset-4 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full blur-lg opacity-30"></div>
+                  <img 
+                    src={project1} 
+                    alt="Brooklyn Gilbert" 
+                    className="relative w-full h-full object-cover rounded-full border-8 border-white shadow-2xl"
+                  />
+                  <div className="absolute -bottom-4 -right-4 bg-white p-4 rounded-2xl shadow-xl">
+                    <div className="text-3xl font-bold text-blue-600">15+</div>
+                    <div className="text-gray-600 text-sm">Years Experience</div>
+                  </div>
                 </div>
-                <div className="text-gray-700 font-medium">Experience</div>
-                <div className="mt-2 text-sm text-gray-500">Years of Excellence</div>
-              </div>
-              
-              <div className="text-center p-6 md:p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-3">
-                  250+
+
+               
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-12">
+                  <div className="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-3">
+                      250+
+                    </div>
+                    <div className="text-gray-700 font-medium">Projects</div>
+                    <div className="mt-2 text-sm text-gray-500">Completed</div>
+                  </div>
+                  
+                  <div className="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-3">
+                      58
+                    </div>
+                    <div className="text-gray-700 font-medium">Clients</div>
+                    <div className="mt-2 text-sm text-gray-500">Happy</div>
+                  </div>
+                  
+                  <div className="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-3">
+                      99%
+                    </div>
+                    <div className="text-gray-700 font-medium">Satisfaction</div>
+                    <div className="mt-2 text-sm text-gray-500">Rate</div>
+                  </div>
                 </div>
-                <div className="text-gray-700 font-medium">Projects Completed</div>
-                <div className="mt-2 text-sm text-gray-500">Successful Delivery</div>
-              </div>
-              
-              <div className="text-center p-6 md:p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-3">
-                  58
-                </div>
-                <div className="text-gray-700 font-medium">Happy Clients</div>
-                <div className="mt-2 text-sm text-gray-500">Satisfied Customers</div>
               </div>
             </div>
           </div>
         </section>
-      </div>
+
+       
+        <section id="about" className="bg-gradient-to-r from-blue-50 to-indigo-50 py-20">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+                About <span className="text-blue-600">Me</span>
+              </h2>
+              <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+                Passionate designer and developer with over 15 years of experience creating digital experiences
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              
+              <div>
+                <h3 className="text-2xl font-bold text-gray-800 mb-6">My Journey</h3>
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  Based in the heart of London, I've spent the last 15 years honing my craft in UI/UX design and frontend development. 
+                  My journey started with graphic design in 2008, and over the years, I've evolved into a full-stack creative who 
+                  can take projects from concept to completion.
+                </p>
+                <p className="text-gray-600 mb-8 leading-relaxed">
+                  I believe in creating designs that are not only beautiful but also functional and accessible. 
+                  Every pixel, every line of code serves a purpose in creating meaningful user experiences.
+                </p>
+                
+                
+                <div className="space-y-6">
+                  {skills.slice(0, 4).map((skill, index) => (
+                    <div key={index}>
+                      <div className="flex justify-between mb-2">
+                        <span className="font-medium text-gray-700">{skill.name}</span>
+                        <span className="text-blue-600 font-bold">{skill.level}%</span>
+                      </div>
+                      <div className="w-full bg-gray-200 rounded-full h-3">
+                        <div 
+                          className="bg-gradient-to-r from-blue-500 to-indigo-500 h-3 rounded-full transition-all duration-1000 ease-out"
+                          style={{ width: `${skill.level}%` }}
+                        ></div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              
+              <div className="grid grid-cols-2 gap-6">
+                <div className="bg-white p-6 rounded-2xl shadow-lg">
+                  <div className="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+                    <span className="text-2xl">📍</span>
+                  </div>
+                  <h4 className="font-bold text-gray-800 text-lg mb-2">Location</h4>
+                  <p className="text-gray-600">London, England</p>
+                  <p className="text-gray-500 text-sm mt-1">Working Worldwide</p>
+                </div>
+                
+                <div className="bg-white p-6 rounded-2xl shadow-lg">
+                  <div className="w-14 h-14 bg-indigo-100 rounded-xl flex items-center justify-center mb-4">
+                    <span className="text-2xl">🎓</span>
+                  </div>
+                  <h4 className="font-bold text-gray-800 text-lg mb-2">Education</h4>
+                  <p className="text-gray-600">MSc. Computer Science</p>
+                  <p className="text-gray-500 text-sm mt-1">University of London</p>
+                </div>
+                
+                <div className="bg-white p-6 rounded-2xl shadow-lg">
+                  <div className="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
+                    <span className="text-2xl">💼</span>
+                  </div>
+                  <h4 className="font-bold text-gray-800 text-lg mb-2">Experience</h4>
+                  <p className="text-gray-600">15+ Years</p>
+                  <p className="text-gray-500 text-sm mt-1">Design & Development</p>
+                </div>
+                
+                <div className="bg-white p-6 rounded-2xl shadow-lg">
+                  <div className="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mb-4">
+                    <span className="text-2xl">🌍</span>
+                  </div>
+                  <h4 className="font-bold text-gray-800 text-lg mb-2">Languages</h4>
+                  <p className="text-gray-600">English, Spanish</p>
+                  <p className="text-gray-500 text-sm mt-1">Fluent in both</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        
+        <section id="hobby" className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+                My <span className="text-blue-600">Hobbies</span> & Interests
+              </h2>
+              <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+                Beyond design and code, here's what keeps me inspired and balanced
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {hobbies.map((hobby, index) => (
+                <div 
+                  key={index} 
+                  className="group relative overflow-hidden bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
+                >
+                  <div className="p-8">
+                    <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                      {hobby.icon}
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-800 mb-3">{hobby.name}</h3>
+                    <p className="text-gray-600 mb-4">{hobby.description}</p>
+                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            
+            <div className="mt-16 bg-gradient-to-r from-blue-50 to-indigo-50 p-8 rounded-2xl">
+              <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">Weekend Activities</h3>
+              <div className="flex flex-wrap justify-center gap-4">
+                {[
+                  'Photography Walks in Nature',
+                  'Cooking International Dishes',
+                  'Reading Design Books',
+                  'Hiking & Outdoor Adventures',
+                  'Visiting Art Galleries',
+                  'Coffee Tasting Sessions'
+                ].map((activity, index) => (
+                  <span 
+                    key={index}
+                    className="bg-white px-5 py-3 rounded-full text-gray-700 shadow-sm hover:shadow-md transition-shadow duration-300"
+                  >
+                    {activity}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+       
+        <section id="achievements" className="py-20 bg-gradient-to-r from-gray-50 to-blue-50">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+                My <span className="text-blue-600">Achievements</span> & Awards
+              </h2>
+              <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+                Recognition and awards earned through dedication and excellence in design
+              </p>
+            </div>
+
+           
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+              {achievements.map((achievement, index) => (
+                <div 
+                  key={index} 
+                  className="relative bg-white rounded-2xl shadow-xl p-8 group hover:shadow-2xl transition-all duration-500"
+                >
+                  <div className="absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center text-white font-bold text-2xl shadow-lg">
+                    🏆
+                  </div>
+                  <div className="mb-4">
+                    <span className="inline-block px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">
+                      {achievement.year}
+                    </span>
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-800 mb-4">{achievement.title}</h3>
+                  <p className="text-gray-600 mb-6">{achievement.description}</p>
+                  <div className="flex items-center">
+                    <div className="text-yellow-500 text-xl">★★★★★</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+           
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+             
+              <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white p-8 rounded-2xl shadow-xl">
+                <h3 className="text-2xl font-bold mb-8 flex items-center gap-3">
+                  <span>📜</span> Certifications
+                </h3>
+                <ul className="space-y-4">
+                  {[
+                    'Google UX Design Professional Certificate',
+                    'Adobe Certified Expert (ACE)',
+                    'AWS Certified Developer',
+                    'Scrum Master Certified (SMC)',
+                    'Figma Design System Specialist',
+                    'Mobile UI/UX Design Certification'
+                  ].map((cert, index) => (
+                    <li key={index} className="flex items-center gap-3">
+                      <span className="w-2 h-2 bg-white rounded-full"></span>
+                      {cert}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="bg-white p-8 rounded-2xl shadow-xl">
+                <h3 className="text-2xl font-bold text-gray-800 mb-8">Professional Recognition</h3>
+                <div className="space-y-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <span className="text-blue-600 text-2xl">📰</span>
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-gray-800 text-lg">Featured in Tech Magazine</h4>
+                      <p className="text-gray-600">2023 Edition - Top 50 UI/UX Designers Worldwide</p>
+                      <p className="text-gray-500 text-sm mt-1">Digital Design Journal</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-4">
+                    <div className="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <span className="text-green-600 text-2xl">🎤</span>
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-gray-800 text-lg">Industry Speaker</h4>
+                      <p className="text-gray-600">Keynote Speaker at International Design Conference 2023</p>
+                      <p className="text-gray-500 text-sm mt-1">London Design Summit</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+                Featured <span className="text-blue-600">Projects</span>
+              </h2>
+              <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+                A selection of my recent design and development work
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {projects.map((project, index) => (
+                <div key={index} className="group">
+                  <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden">
+
+                    <div className="h-48 bg-gradient-to-r from-blue-400 to-indigo-500 relative overflow-hidden">
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <span className="text-white text-5xl font-bold opacity-30">0{index + 1}</span>
+                      </div>
+                      <div className="absolute top-4 right-4">
+                        <span className="bg-white/20 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm">
+                          {project.category}
+                        </span>
+                      </div>
+                    </div>
+                    
+                    <div className="p-6">
+                      <h3 className="text-xl font-bold text-gray-800 mb-2">{project.title}</h3>
+                      <p className="text-gray-600 mb-4">{project.description}</p>
+                      <button className="text-blue-600 font-medium hover:text-blue-700 transition duration-300">
+                        View Case Study →
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Contact Section */}
+        <section id="contact" className="py-20 bg-gradient-to-r from-blue-50 to-indigo-50">
+          <div className="max-w-4xl mx-auto px-6 text-center">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+              Let's <span className="text-blue-600">Work Together</span>
+            </h2>
+            <p className="text-gray-600 text-lg mb-10 max-w-2xl mx-auto">
+              Have a project in mind? I'd love to hear about it. Let's create something amazing together.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold px-10 py-4 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl shadow-lg">
+                Get In Touch 📧
+              </button>
+              <button className="border-2 border-gray-300 hover:border-blue-600 text-gray-700 hover:text-blue-600 font-semibold px-10 py-4 rounded-xl transition-all duration-300">
+                Download CV 📄
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
+      <footer className="bg-gray-900 text-white pt-16 pb-8">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
             {/* Brand Info */}
-            <div>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center">
-                  <span className="text-white font-bold text-xl">B</span>
+            <div className="col-span-1 md:col-span-2">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-14 h-14 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center">
+                  <span className="text-white font-bold text-2xl">B</span>
                 </div>
                 <div>
-                  <h2 className="text-2xl font-bold">BVVNE</h2>
+                  <h2 className="text-3xl font-bold">BVVNE</h2>
                   <p className="text-gray-400 text-sm">Design & Development Studio</p>
                 </div>
               </div>
-              <p className="text-gray-400 mb-6">
-                Creating beautiful digital experiences with passion and precision.
-                Based in London, serving clients worldwide.
+              <p className="text-gray-400 mb-8 max-w-md">
+                Creating beautiful digital experiences with passion and precision. Based in London, 
+                serving clients worldwide with innovative design and development solutions.
               </p>
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
+                  📧
+                </div>
+                <div>
+                  <p className="text-gray-400 text-sm">Email me at</p>
+                  <p className="font-medium">hello@bvvne.com</p>
+                </div>
+              </div>
             </div>
             
             {/* Quick Links */}
             <div>
               <h3 className="text-xl font-bold mb-6 text-white">Quick Links</h3>
               <ul className="space-y-3">
-                <li><a href="#about" className="text-gray-400 hover:text-white transition duration-300">About Me</a></li>
-                <li><a href="#hobby" className="text-gray-400 hover:text-white transition duration-300">My Hobbies</a></li>
-                <li><a href="#achievements" className="text-gray-400 hover:text-white transition duration-300">Achievements</a></li>
-                <li><a href="#portfolio" className="text-gray-400 hover:text-white transition duration-300">Portfolio</a></li>
-                <li><a href="#contact" className="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+                <li><a href="#about" className="text-gray-400 hover:text-white transition duration-300 hover:pl-2">About Me</a></li>
+                <li><a href="#hobby" className="text-gray-400 hover:text-white transition duration-300 hover:pl-2">My Hobbies</a></li>
+                <li><a href="#achievements" className="text-gray-400 hover:text-white transition duration-300 hover:pl-2">Achievements</a></li>
+                <li><a href="#contact" className="text-gray-400 hover:text-white transition duration-300 hover:pl-2">Contact</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition duration-300 hover:pl-2">Portfolio</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition duration-300 hover:pl-2">Blog</a></li>
               </ul>
             </div>
             
@@ -336,63 +514,43 @@ const Portfolio = () => {
             <div>
               <h3 className="text-xl font-bold mb-6 text-white">Connect With Me</h3>
               <p className="text-gray-400 mb-6">
-                Follow me on social media for updates, inspiration, and more.
+                Follow for design inspiration, tips, and updates
               </p>
-              <div className="flex space-x-4">
-                <a 
-                  href="https://facebook.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 bg-blue-600 hover:bg-blue-700 rounded-full flex items-center justify-center transition duration-300 transform hover:scale-110"
-                >
-                  <span className="text-white font-bold">f</span>
-                </a>
-                <a 
-                  href="https://instagram.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 rounded-full flex items-center justify-center transition duration-300 transform hover:scale-110"
-                >
-                  <span className="text-white font-bold">IG</span>
-                </a>
-                <a 
-                  href="https://linkedin.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 bg-blue-500 hover:bg-blue-600 rounded-full flex items-center justify-center transition duration-300 transform hover:scale-110"
-                >
-                  <span className="text-white font-bold">in</span>
-                </a>
-                <a 
-                  href="https://twitter.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 bg-sky-500 hover:bg-sky-600 rounded-full flex items-center justify-center transition duration-300 transform hover:scale-110"
-                >
-                  <span className="text-white font-bold">𝕏</span>
-                </a>
+              <div className="grid grid-cols-3 gap-3">
+                {socialLinks.map((social, index) => (
+                  <a 
+                    key={index}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`${social.color} w-12 h-12 rounded-xl flex items-center justify-center text-white transition duration-300 transform hover:scale-110 hover:shadow-lg`}
+                    title={social.name}
+                  >
+                    <span className="text-lg">{social.icon}</span>
+                  </a>
+                ))}
               </div>
               
+              {/* Related Links */}
               <div className="mt-8">
-                <h4 className="font-bold mb-3">Related Links</h4>
+                <h4 className="font-bold mb-4 text-white">Related Links</h4>
                 <div className="flex flex-wrap gap-2">
-                  <a href="#" className="text-gray-400 hover:text-white text-sm transition duration-300">Design Blog</a>
-                  <span className="text-gray-600">•</span>
-                  <a href="#" className="text-gray-400 hover:text-white text-sm transition duration-300">Portfolio Gallery</a>
-                  <span className="text-gray-600">•</span>
-                  <a href="#" className="text-gray-400 hover:text-white text-sm transition duration-300">Free Resources</a>
-                  <span className="text-gray-600">•</span>
-                  <a href="#" className="text-gray-400 hover:text-white text-sm transition duration-300">Design Tools</a>
+                  <a href="#" className="text-gray-400 hover:text-white text-sm transition duration-300">Design Blog →</a>
+                  <a href="#" className="text-gray-400 hover:text-white text-sm transition duration-300">Portfolio Gallery →</a>
+                  <a href="#" className="text-gray-400 hover:text-white text-sm transition duration-300">Free Resources →</a>
+                  <a href="#" className="text-gray-400 hover:text-white text-sm transition duration-300">Design Tools →</a>
                 </div>
               </div>
             </div>
           </div>
           
-          <hr className="border-gray-800 my-8" />
+          {/* Footer Bottom */}
+          <hr className="border-gray-800 my-12" />
           
-          <div className="flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm">
-            <div className="mb-4 md:mb-0">
+          <div className="flex flex-col md:flex-row justify-between items-center text-gray-400">
+            <div className="mb-4 md:mb-0 text-center md:text-left">
               <p>© 2024 BVVNE Design Studio. All rights reserved.</p>
+              <p className="text-sm mt-1">Based in London, England 🇬🇧</p>
             </div>
             <div className="flex gap-6">
               <a href="#" className="hover:text-white transition duration-300">Privacy Policy</a>

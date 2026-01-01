@@ -12,12 +12,13 @@ import Service from "./components/Service";
 import Testimonials from "./components/Testimonials";
 import Footer from "./components/Footer";
 import Dasgal from "./components/Dasgal";
+import Portfolio from "./components/Portfolio";
 const App = () => {
   return (
     <main className="relative min-h-screen overflow-x-hidden ">
       <div className="absolute -top-28 w-full ">
         <div className="overflow-hidden">
-          <Nav />
+          {/* <Nav />
           <Hero />
           <CompanyLogo />
           <Purpose />
@@ -28,7 +29,8 @@ const App = () => {
           <Service />
           <Testimonials/>
           <Footer/>
-          <Dasgal/>
+          <Dasgal/> */}
+          <Portfolio />
         </div>
       </div>
     </main>
