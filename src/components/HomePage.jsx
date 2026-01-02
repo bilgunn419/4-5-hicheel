@@ -31,7 +31,7 @@ const HomePage = () => {
             <div className="stat-label">Курс</div>
           </div>
           <div className="stat-item">
-            <div className="stat-number">10+</div>
+            <div className="stat-number">8</div>
             <div className="stat-label">Төсөл</div>
           </div>
           <div className="stat-item">
@@ -73,17 +73,17 @@ const HomePage = () => {
             <div className="guide-card">
               <h4>💼 Projects</h4>
               <p>Миний хийсэн төслүүдийг үзэх</p>
-              <a href="#projects" className="guide-link">Үзэх →</a>
+              <a href="https://togloom-six.vercel.app/" className="guide-link">Үзэх →</a>
             </div>
             <div className="guide-card">
               <h4>📄 Resume</h4>
               <p>Миний боловсрол, туршлагыг үзэх</p>
-              <a href="#resume" className="guide-link">Үзэх →</a>
+              <a href="https://drive.google.com/file/d/1E-H3vRdl0LDtPjbI3QHXfRm1NNjhReSO/view" className="guide-link">Үзэх →</a>
             </div>
             <div className="guide-card">
               <h4>📞 Contact</h4>
               <p>Надтай холбогдох</p>
-              <a href="#contact" className="guide-link">Үзэх →</a>
+              <a href="u" className="guide-link">Үзэх →</a>
             </div>
           </div>
         </div>

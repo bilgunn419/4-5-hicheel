@@ -4,11 +4,11 @@ import React from 'react';
 const Footer1 = ({ currentPage }) => {
   const getPageTitle = () => {
     switch(currentPage) {
-      case 'home': return 'Нүүр хуудас';
-      case 'projects': return 'Төслүүд';
-      case 'resume': return 'Резюме';
-      case 'contact': return 'Холбоо барих';
-      default: return 'Портфолио';
+      case 'home': return 'Home';
+      case 'projects': return 'Projects';
+      case 'resume': return 'Resume';
+      case 'contact': return 'Contact';
+      default: return 'Portfolio';
     }
   };
 

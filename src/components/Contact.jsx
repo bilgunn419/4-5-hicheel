@@ -46,28 +46,23 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: '📧',
-      title: 'И-мэйл',
+      title: 'И-мэйл:',
       value: 'bilguunee0419@gmail.com',
-      link: 'bilguunee0419@gmail.com'
+      link: 'https://mail.google.com/mail/u/0/#spam?compose=GTvVlcSHwfLPRdHhVjBmffhKXvrFxZGFWCZvrXhqqfPtNtnPFJSfQVsGjLDKvDsqkTKjngtGhWCxB'
     },
     {
       icon: '📱',
-      title: 'Утас',
+      title: 'Утас:',
       value: '8929-0899',
-      link: 'tel:89290899'
+      link: 'tel:+97689290899'
     },
     {
       icon: '📍',
-      title: 'Хаяг',
+      title: 'Хаяг:',
       value: 'Улаанбаатар хот, Баянгол дүүрэг',
       link: null
     },
-    {
-      icon: '🕒',
-      title: 'Ажлын цаг',
-      value: 'Даваа - Баасан, 9:00 - 18:00',
-      link: null
-    }
+   
   ];
 
   const socialLinks = [
@@ -88,9 +83,9 @@ const Contact = () => {
           <div className="contact-info-section">
             <h3 className="contact-subtitle">Би хэн бэ?</h3>
             <p className="contact-description">
-              Би IT инженер мэргэжлийн оюутан бөгөөд шинэ технологи, төсөл, 
-              хамтын ажиллагаанд дуртай. Хэрэв танд асуулт, санал болон 
-              хамтрах боломж байвал доорх холбоосуудаар холбогдоно уу.
+              Би 18 настай, ам бүл 5, IT инженер мэргэжлээр сурдаг оюутан бөгөөд шинэ технологи, төсөл, 
+              хамтын ажиллагааг илүүд үздэг. Түүний хажуугаар чөлөөт цагаараа найзуудтайгаа хамт
+              цагийг өнгрүүлэх дуртай.
             </p>
             
             <div className="contact-details">
@@ -111,7 +106,7 @@ const Contact = () => {
 
             {/* Нийгмийн сүлжээ */}
             <div className="social-section">
-              <h3 className="social-title">Намайг дагаарай</h3>
+              <h3 className="social-title">Намайг дагаарай:</h3>
               <div className="social-links">
                 {socialLinks.map((social, index) => (
                   <a 

@@ -3,10 +3,10 @@ import React from 'react';
 
 const Header1 = ({ currentPage, onChangePage }) => {
   const navItems = [
-    { id: 'home', label: 'Нүүр', icon: '🏠' },
-    { id: 'projects', label: 'Төслүүд', icon: '💻' },
-    { id: 'resume', label: 'Резюме', icon: '📄' },
-    { id: 'contact', label: 'Холбоо барих', icon: '📞' }
+    { id: 'home', label: 'Home', icon: '🏠' },
+    { id: 'projects', label: 'Projects', icon: '💻' },
+    { id: 'resume', label: 'Resume', icon: '📄' },
+    { id: 'contact', label: 'Contact', icon: '📞' }
   ];
 
   return (
@@ -16,8 +16,8 @@ const Header1 = ({ currentPage, onChangePage }) => {
         <div className="logo" onClick={() => onChangePage('home')}>
           <div className="logo-icon">💼</div>
           <div className="logo-text">
-            <h1>Тэмүүжин Болд</h1>
-            <p className="logo-subtitle">Портфолио Систем</p>
+            <h1>Билгүүн</h1>
+            <p className="logo-subtitle">Portfolio систем</p>
           </div>
         </div>
 
