@@ -8,7 +8,7 @@ const Resume = () => {
       degree: 'Бүрэн дунд боловсорлын гэрчилгээ',
       school: 'Монгол Коосэн Сургууль',
       period: '2022 - 2025',
-      description: '4-р курсын оюутан. Гол чиглэл: Вэб хөгжүүлэлт, 3D, Design',
+      description: ' Гол чиглэл: Вэб хөгжүүлэлт, 3D, Design, Frontend, Machine learning, Deep learning, Iot',
       gpa: '2.8'
     },
   ];
@@ -77,7 +77,7 @@ const Resume = () => {
           <div className="resume-section">
             <h3 className="resume-section-title">
               <span className="section-icon">💼</span>
-              Ажлын Туршлага
+              Ажлын Туршлага:
             </h3>
             
             <div className="experience-grid">
@@ -108,12 +108,12 @@ const Resume = () => {
           <div className="resume-section">
             <h3 className="resume-section-title">
               <span className="section-icon">⚡</span>
-              Техникийн Ур чадвар
+              Техникийн Ур чадвар:
             </h3>
             
             <div className="skills-grid">
               <div className="skill-category">
-                <h4 className="skill-category-title">Frontend</h4>
+                <h4 className="skill-category-title">Frontend:</h4>
                 <div className="skill-list">
                   <span className="skill-item">React-</span>
                   <span className="skill-item">JavaScript-</span>
@@ -125,7 +125,7 @@ const Resume = () => {
               </div>
               
               <div className="skill-category">
-                <h4 className="skill-category-title">Backend</h4>
+                <h4 className="skill-category-title">Backend:</h4>
                 <div className="skill-list">
                   <span className="skill-item">Node.js-</span>
                   <span className="skill-item">MongoDB-</span>
@@ -135,7 +135,7 @@ const Resume = () => {
               </div>
               
               <div className="skill-category">
-                <h4 className="skill-category-title">Бусад</h4>
+                <h4 className="skill-category-title">Бусад:</h4>
                 <div className="skill-list">
                   <span className="skill-item">Git-</span>
                   <span className="skill-item">Figma</span>
